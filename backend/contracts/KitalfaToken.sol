@@ -18,7 +18,7 @@ contract KitalfaToken is ERC20, Ownable, DataConsumerV3 {
         require(ethInDollars > 0, "Invalid price feed value");
         // Prix en dollars pour 1 token
         uint256 ethInDollarsUint = uint256(ethInDollars / 1e8);
-
+        console.log("Eth in dollars: %s", ethInDollarsUint);
         uint256 expectedPriceInWei = (PRICE_PER_TOKEN * 1 ether * _amount) / ethInDollarsUint;
         console.log("Expected price in wei: %s", expectedPriceInWei);
         console.log("msg.value: %s", msg.value);
@@ -26,5 +26,5 @@ contract KitalfaToken is ERC20, Ownable, DataConsumerV3 {
         require(msg.value >= expectedPriceInWei, "Insufficient funds");
         _mint(_to, _amount);
     }
-    
+
 }
