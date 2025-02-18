@@ -1,3 +1,4 @@
+'use client';
 import '@rainbow-me/rainbowkit/styles.css';
 import {
   darkTheme,
@@ -10,7 +11,7 @@ import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 
 const config = getDefaultConfig({
   appName: 'My RainbowKit App',
-  projectId: '',
+  projectId: 'id kitalfa',
   chains: [hardhat],
   ssr: true, // If your dApp uses server side rendering (SSR)
 });
